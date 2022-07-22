@@ -1,7 +1,11 @@
 module.exports = {
   build: {
     env: require('./prod.env'),
-    DisableF12: true
+    DisableF12: true,
+    cleanConsole: true,
+    openDevTools: false,
+    hotPublishUrl: "",
+    hotPublishConfigName: "update-config"
   },
   dev: {
     env: require('./dev.env'),
@@ -14,5 +18,6 @@ module.exports = {
   UseStartupChart: true,
   IsUseSysTitle: true,
   DllFolder: '',
-  BuiltInServerPort: 25565
+  BuiltInServerPort: 25565,
+  UseJsx: true
 }

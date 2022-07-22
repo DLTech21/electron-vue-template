@@ -13,6 +13,9 @@ function resolve(dir) {
 }
 
 let mainConfig = {
+  infrastructureLogging: {
+    level: 'warn'
+  },
   entry: {
     main: path.join(__dirname, '../src/main/index.js')
   },
@@ -69,7 +72,7 @@ if (process.env.NODE_ENV !== 'production') {
 /**
  * Adjust mainConfig for production settings
  */
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production' && config.build.cleanConsole) {
   mainConfig.optimization = {
     minimize: true,
     minimizer: [
